@@ -23,17 +23,19 @@ const Login = () => {
   };
 
   return username ? (
-    <section>
+    <section className='welcome-container'>
       <p>Welcome {username}</p>
-      <button onClick={onLogout}>Logout</button>
+      <button className='logout-button' onClick={onLogout}>
+        Logout
+      </button>
     </section>
   ) : (
-    <section>
-      <article>
+    <section className='login-container'>
+      <article className='login-input-wrapper'>
         <input type='text' placeholder='Your name' ref={inputRef} />
         <button onClick={onLogin}>Login</button>
       </article>
-      <p>*Login to persist your saved stories</p>
+      <p className='info'>*Login to persist your saved stories</p>
     </section>
   );
 };

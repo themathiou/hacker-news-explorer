@@ -1,0 +1,38 @@
+.saved-stories-container {
+  width: 700px;
+  max-width: 80vw;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .delete-button {
+    color: #ff4d4d;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}

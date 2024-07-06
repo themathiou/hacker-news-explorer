@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../shared/store';
 import { HackerNewsActions } from '../../shared/store/hacker-news';
 import { highlightText } from '../../shared/helpers/text-highlight.helper';
+import './AutoSuggest.css';
 
 const AutoSuggest: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -58,18 +59,18 @@ const AutoSuggest: React.FC = () => {
   };
 
   return (
-    <section onBlur={handleBlur} tabIndex={-1}>
+    <section onBlur={handleBlur} tabIndex={-1} className='auto-suggest-input'>
       <input type='text' placeholder='Search title' value={query} onChange={handleChange} onFocus={handleFocus} />
       {isFocused && (
         <ul>
           {loading && (
-            <li>
+            <li className='info'>
               <p>Fetching...</p>
             </li>
           )}
 
           {query && !suggestions.length && !loading && (
-            <li>
+            <li className='info'>
               <p>No results...</p>
             </li>
           )}

@@ -1,0 +1,48 @@
+.auto-suggest-input {
+  width: 700px;
+  max-width: 80vw;
+  position: relative;
+  margin: 0 auto;
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    /* Ensures padding is included in the width */
+    padding: 8px;
+  }
+
+  ul {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    /* To connect it seamlessly to the input field */
+    max-height: 200px;
+    /* Optional: to limit the height */
+    overflow-y: auto;
+    /* Optional: to allow scrolling if there are many items */
+    box-sizing: border-box;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1000;
+    /* Ensure it appears above other elements */
+
+    li {
+      padding: 8px;
+      cursor: pointer;
+      color: black;
+      border-block-end: 1px solid #ccc;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+
+    .info {
+      text-align: center;
+      color: darkgray;
+    }
+  }
+}

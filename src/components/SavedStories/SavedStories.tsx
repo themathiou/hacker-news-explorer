@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { HackerNewsActions, selectSavedStories } from '../../shared/store/hacker-news';
 import { AppDispatch } from '../../shared/store';
+import './SavedStories.css';
 
 const SavedStories = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -11,7 +12,7 @@ const SavedStories = () => {
   };
 
   return (
-    <section>
+    <section className='saved-stories-container'>
       <h2>Saved Stories</h2>
       {stories.length > 0 ? (
         <ul>
@@ -20,7 +21,7 @@ const SavedStories = () => {
               <a href={story.url} target='_blank' rel='noreferrer' title='Open in new tab'>
                 {story.title}
               </a>
-              <button onClick={() => deleteStory(story.objectID)} title='Delete'>
+              <button className='delete-button' onClick={() => deleteStory(story.objectID)} title='Delete'>
                 ❌
               </button>
             </li>

@@ -1,0 +1,39 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4em;
+
+  .login-input-wrapper {
+    display: flex;
+    gap: 1em;
+  }
+
+  .info {
+    color: lightgray;
+    margin: 0;
+    font-size: 0.9em;
+    font-style: oblique;
+  }
+}
+
+.welcome-container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  .logout-button {
+    color: #ff4d4d;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100px;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
