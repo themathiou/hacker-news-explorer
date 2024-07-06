@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import hnReducer from './hacker-news';
+import userInfoReducer from './user-info';
 
 export const store = configureStore({
   reducer: {
+    userInfo: userInfoReducer,
     hackernews: hnReducer
   }
 });
