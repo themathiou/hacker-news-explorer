@@ -5,6 +5,7 @@ import { HNResponse, Hit } from '../../models/hn-response.model';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../shared/store';
 import { HackerNewsActions } from '../../shared/store/hacker-news';
+import { highlightText } from '../../shared/helpers/text-highlight.helper';
 
 const AutoSuggest: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -75,7 +76,7 @@ const AutoSuggest: React.FC = () => {
 
           {suggestions.map((suggestion: Hit) => (
             <li key={suggestion.objectID} onClick={() => saveStory(suggestion)}>
-              <p> {suggestion.title}</p>
+              <p>{highlightText(suggestion.title, query)}</p>
               <p>
                 {suggestion.points} points| by {suggestion.author} | {suggestion.num_comments} comments
               </p>
